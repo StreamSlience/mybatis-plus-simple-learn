@@ -18,6 +18,7 @@
     <!--添加子工程名称-->
     <modules>
         <module>mpsl-enum</module>
+        <module>mpsl-page</module>
     </modules>
 
     <properties>

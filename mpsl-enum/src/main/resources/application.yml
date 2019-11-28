@@ -39,4 +39,4 @@ mybatis-plus:
 
 logging:
   level:
-    com.simple.mp: debug
+    com.streamslience.simples.enums.mpslenum: trace
