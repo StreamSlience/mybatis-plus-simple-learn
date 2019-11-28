@@ -41,9 +41,9 @@ public class UserInfoEntity {
     @JSONField(serialzeFeatures = SerializerFeature.WriteEnumUsingToString)
     private GenderEnum userGender;
 
-//    @ApiModelProperty("用户国籍")
-//    @JSONField(serialzeFeatures = SerializerFeature.WriteEnumUsingToString)
-//    private NationalityEnum userNationality;
+    @ApiModelProperty("用户国籍")
+    @JSONField(serialzeFeatures = SerializerFeature.WriteEnumUsingToString)
+    private NationalityEnum userNationality;
 
     @ApiModelProperty("邮箱")
     private String userEmail;

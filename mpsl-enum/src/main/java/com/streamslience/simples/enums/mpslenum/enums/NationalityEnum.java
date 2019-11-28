@@ -21,4 +21,8 @@ public enum NationalityEnum {
     private final int code;
     private final String value;
 
+    @Override
+    public String toString() {
+        return value;
+    }
 }
