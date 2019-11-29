@@ -1,0 +1,38 @@
+#端口
+server:
+  port: 8784
+
+#数据库配置
+spring:
+  datasource:
+    hikari:
+      username: root
+      jdbc-url: jdbc:mysql://localhost:3306/mybatispuls?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+      driver-class-name: com.mysql.jdbc.Driver
+      pool-name: Hikaric
+      minimum-idle: 10
+      maximum-pool-size: 20
+      auto-commit: true
+      idle-timeout: 12000
+      max-lifetime: 20000
+      connection-timeout: 10000
+      connection-test-query: select 1
+      connection-init-sql: set names urf8mb4
+      read-only: false
+
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: id_worker_str
+      column-underline: true
+      logic-delete-value: D
+      logic-not-delete-value: A
+      # table-underline: true
+      # capital-mode: true
+
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+logging:
+  level:
+    com.streamslience.simples.page.mpslpage: trace
