@@ -19,7 +19,7 @@
     <modules>
         <module>mpsl-enum</module>
         <module>mpsl-page</module>
-        <module>mpsl-logicaldelete</module>
+        <module>mpsl-logicaldeleted</module>
     </modules>
 
     <properties>
