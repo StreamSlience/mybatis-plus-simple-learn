@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @description
  * @creatdate 2019-11-28 19:40
  */
-@RestController//该主键必须加载实现类上
+@RestController
 public class UserInfoControllerImpl implements IUserInfoController {
 
     @Autowired
@@ -24,6 +24,9 @@ public class UserInfoControllerImpl implements IUserInfoController {
         Result<UserInfoEntity> result = new Result<>(ApiResponseCode.SUCCESS.get(), ApiResponseCode.SUCCESS.getName());
 
         UserInfoEntity user = userInfoDao.selectById(id);
+        user.getUserNationality().name();
+        user.getUserNationality().getCode();
+        user.getUserNationality().getValue();
 
         System.err.println(user);
         result.setDatas(user);
