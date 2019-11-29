@@ -27,5 +27,5 @@ public class BaseEntity {
     private Date createDate;
 
     @ApiModelProperty("逻辑删除")
-    private String deleted = "A";
+    private String delete = "A";
 }

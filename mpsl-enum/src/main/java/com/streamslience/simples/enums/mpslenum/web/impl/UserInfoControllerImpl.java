@@ -1,13 +1,10 @@
 package com.streamslience.simples.enums.mpslenum.web.impl;
 
-import com.streamslience.simples.enums.mpslenum.bo.UserInfoBO;
 import com.streamslience.simples.enums.mpslenum.dao.UserInfoDao;
 import com.streamslience.simples.enums.mpslenum.entity.UserInfoEntity;
 import com.streamslience.simples.enums.mpslenum.util.ApiResponseCode;
 import com.streamslience.simples.enums.mpslenum.util.Result;
 import com.streamslience.simples.enums.mpslenum.web.IUserInfoController;
-import com.zaxxer.hikari.util.SuspendResumeLock;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
