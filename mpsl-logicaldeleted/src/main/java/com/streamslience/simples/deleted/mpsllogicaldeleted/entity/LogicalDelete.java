@@ -1,5 +1,6 @@
 package com.streamslience.simples.deleted.mpsllogicaldeleted.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -14,8 +15,8 @@ import lombok.ToString;
 @ToString(callSuper = true)
 public class LogicalDelete extends Base {
 
-    @TableId
+    @TableId(type = IdType.INPUT)
     @ApiModelProperty("逻辑删除主键")
-    private String logicalId;
+    private Integer logicalId;
 
 }

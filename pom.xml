@@ -15,11 +15,12 @@
     <name>mybatis-plus-simple-learn</name>
     <description>Demo project for Spring Boot</description>
 
-    <!--添加子工程名称-->
+    <!--子工程-->
     <modules>
         <module>mpsl-enum</module>
         <module>mpsl-page</module>
         <module>mpsl-logicaldeleted</module>
+        <module>mpsl-typehandler</module>
     </modules>
 
     <properties>
@@ -56,7 +57,12 @@
             <artifactId>springfox-swagger2</artifactId>
             <version>2.9.2</version>
         </dependency>
-
+        <!--Hutool-->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>4.5.7</version>
+        </dependency>
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
