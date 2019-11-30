@@ -1,5 +1,39 @@
 server:
   port: 8781
 
+spring:
+  datasource:
+    username: root
+    password: ???
+    url: jdbc:mysql://localhost:3306/mybatislearn?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      pool-name: Hikaric
+      minimum-idle: 10
+      maximum-pool-size: 20
+      auto-commit: true
+      idle-timeout: 12000
+      max-lifetime: 30000
+      connection-timeout: 10000
+      connection-init-sql: set names utf8mb4
+      connection-test-query: select 1
+      read-only: false
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: id_worker_str
+      logic-delete-value: D
+      logic-not-delete-value: A
+      table-prefix: xx_
+      # table-underline: true
+
+logging:
+  level:
+    com.streamslience.simples.deleted.mpsllogicaldeleted: trace
+
 
 
