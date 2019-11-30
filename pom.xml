@@ -15,11 +15,12 @@
     <name>mybatis-plus-simple-learn</name>
     <description>Demo project for Spring Boot</description>
 
-    <!--添加子工程名称-->
+    <!--子工程-->
     <modules>
         <module>mpsl-enum</module>
         <module>mpsl-page</module>
         <module>mpsl-logicaldeleted</module>
+        <module>mpsl-typehandler</module>
     </modules>
 
     <properties>
