@@ -21,6 +21,7 @@
         <module>mpsl-page</module>
         <module>mpsl-logicaldeleted</module>
         <module>mpsl-typehandler</module>
+        <module>mpsl-auto-fill-metainfo</module>
     </modules>
 
     <properties>
