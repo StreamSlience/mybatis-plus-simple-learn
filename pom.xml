@@ -22,6 +22,7 @@
         <module>mpsl-logicaldeleted</module>
         <module>mpsl-typehandler</module>
         <module>mpsl-auto-fill-metainfo</module>
+        <module>mpsl-sql-parser</module>
     </modules>
 
     <properties>
