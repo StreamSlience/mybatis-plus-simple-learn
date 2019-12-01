@@ -4,7 +4,7 @@ server:
 spring:
   datasource:
     username: root
-    password: onepiece1996
+    password: ???
     url: jdbc:mysql://localhost:3306/mybatispuls?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.zaxxer.hikari.HikariDataSource
@@ -18,7 +18,7 @@ spring:
       connection-timeout: 10000
       connection-init-sql: set names utf8mb4
       connection-test-query: select 1
-      read-only: false
+      # read-only: false
 
 mybatis-plus:
   configuration:

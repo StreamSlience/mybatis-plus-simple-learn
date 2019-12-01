@@ -1,4 +1,4 @@
-package com.streamslience.simples.metainfo.mpslautofillmetainfo.config;
+package com.streamslience.simples.metainfo.mpslautofillmetainfo.configure;
 
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 import org.apache.ibatis.reflection.MetaObject;
