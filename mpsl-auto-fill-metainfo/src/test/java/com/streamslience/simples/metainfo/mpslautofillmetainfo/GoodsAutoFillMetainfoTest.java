@@ -5,7 +5,7 @@ import com.baomidou.mybatisplus.extension.service.additional.query.impl.LambdaQu
 import com.baomidou.mybatisplus.extension.service.additional.update.impl.LambdaUpdateChainWrapper;
 import com.streamslience.simples.metainfo.mpslautofillmetainfo.dao.GoodsDao;
 import com.streamslience.simples.metainfo.mpslautofillmetainfo.entity.GoodsEntity;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
@@ -47,6 +47,4 @@ public class GoodsAutoFillMetainfoTest {
     public void delete() {
         goodsDao.delete(new LambdaQueryChainWrapper<>(goodsDao).getWrapper());
     }
-
-
 }

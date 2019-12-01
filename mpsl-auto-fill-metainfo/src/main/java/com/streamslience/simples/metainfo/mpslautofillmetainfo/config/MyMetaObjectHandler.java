@@ -37,7 +37,8 @@ public class MyMetaObjectHandler implements MetaObjectHandler {
      * @param metaObject
      * @note mybatisPlus自带的update方法都对入参实体添加了注解@Param("et")<br>
      * 因此使用{@code metaObject.hasGetter("updateDate")} 为 false
-     * 应该使用{@code metaObject.hasGetter("et.updateDate")} 才是正确方法
+     * 应该使用{@code metaObject.hasGetter("et.updateDate")} 或
+     *        {@code metaObject.hasGetter("param1.updateDate")}才是正确方法
      */
     @Override
     public void updateFill(MetaObject metaObject) {
