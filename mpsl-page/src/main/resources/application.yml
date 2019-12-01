@@ -19,6 +19,7 @@ spring:
       connection-test-query: select 1
       connection-init-sql: set names urf8mb4
       read-only: false
+      password: ???
 
 mybatis-plus:
   global-config:

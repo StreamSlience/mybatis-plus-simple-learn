@@ -21,6 +21,7 @@
         <module>mpsl-page</module>
         <module>mpsl-logicaldeleted</module>
         <module>mpsl-typehandler</module>
+        <module>mpsl-auto-fill-metainfo</module>
     </modules>
 
     <properties>
@@ -43,6 +44,11 @@
                     <artifactId>junit-vintage-engine</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
         </dependency>
 
         <!--MyuBatisPlus-->
