@@ -33,7 +33,6 @@ class MpslLogicaldeleteApplicationTests {
 
     }
 
-
     /**
      * <p>新增逻辑删除数据</p>
      */

@@ -71,6 +71,12 @@
             <artifactId>hutool-all</artifactId>
             <version>4.5.7</version>
         </dependency>
+        <!--执行SQL分析打印 p6spy-->
+        <dependency>
+            <groupId>p6spy</groupId>
+            <artifactId>p6spy</artifactId>
+            <version>3.8.5</version>
+        </dependency>
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
