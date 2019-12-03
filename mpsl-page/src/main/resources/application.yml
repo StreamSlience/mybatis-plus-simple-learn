@@ -5,10 +5,11 @@ server:
 #数据库配置
 spring:
   datasource:
+    username: root
+    password: ???
+    url: jdbc:mysql://localhost:3306/mybatispuls?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    driver-class-name: com.mysql.jdbc.Driver
     hikari:
-      username: root
-      jdbc-url: jdbc:mysql://localhost:3306/mybatispuls?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
-      driver-class-name: com.mysql.jdbc.Driver
       pool-name: Hikaric
       minimum-idle: 10
       maximum-pool-size: 20
@@ -17,9 +18,8 @@ spring:
       max-lifetime: 20000
       connection-timeout: 10000
       connection-test-query: select 1
-      connection-init-sql: set names urf8mb4
+      connection-init-sql: set names utf8mb4
       read-only: false
-      password: ???
 
 mybatis-plus:
   global-config:

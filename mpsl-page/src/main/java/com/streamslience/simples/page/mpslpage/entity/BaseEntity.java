@@ -1,5 +1,7 @@
 package com.streamslience.simples.page.mpslpage.entity;
 
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -27,5 +29,6 @@ public class BaseEntity {
     private Date createDate;
 
     @ApiModelProperty("逻辑删除")
-    private String delete = "A";
+    @TableLogic
+    private String deleted = "A";
 }
