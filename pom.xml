@@ -24,6 +24,7 @@
         <module>mpsl-auto-fill-metainfo</module>
         <module>mpsl-sql-parser</module>
         <module>mpsl-crud</module>
+        <module>mpsl-optimistic-locker</module>
     </modules>
 
     <properties>
