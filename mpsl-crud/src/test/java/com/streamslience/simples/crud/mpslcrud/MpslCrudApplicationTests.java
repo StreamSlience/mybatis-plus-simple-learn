@@ -1,5 +1,6 @@
 package com.streamslience.simples.crud.mpslcrud;
 
+import com.baomidou.mybatisplus.extension.service.additional.query.impl.LambdaQueryChainWrapper;
 import com.streamslience.simples.crud.mpslcrud.dao.UserDao;
 import com.streamslience.simples.crud.mpslcrud.entity.UserEntity;
 import lombok.extern.slf4j.Slf4j;
@@ -31,5 +32,12 @@ public class MpslCrudApplicationTests {
         userDao.insert(user);
     }
 
+    @Test
+    public void bUpdate() {
+        UserEntity userEntity = new UserEntity();
+        userEntity.setUserName("我是一个真用户");
+        userDao.update(userEntity, new LambdaQueryChainWrapper<>(userDao)
+                .eq(UserEntity::getUserName, "我是一个用户").getWrapper());
+    }
 
 }

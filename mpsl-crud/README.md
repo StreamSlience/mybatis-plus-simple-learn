@@ -1,6 +1,6 @@
 # Mybaits-Plus 性能分析插件 与 SQL分析打印
 
-
+**[mybatis-plus-simple-learn](https://gitee.com/StreamSlience/mybatis-plus-simple-learn/tree/feature-1.0.0/StreamSlience/mpsl-crud)**
 
 ## ~~性能分析插件~~
 
@@ -90,13 +90,19 @@ spring:
     ...
 ```
 
+例如：`jdbc:p6spy:mysql://localhost:3306/mybatispuls?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC`
+
+p6spy必须添加，不然p6spy不能拦截
+
+
+
 - spy.properties 配置：
 
-```xml
+```properties
 #3.2.1以上使用
-modulelist=com.baomidou.mybatisplus.extension.p6spy.MybatisPlusLogFactory
+#module.log=com.baomidou.mybatisplus.extension.p6spy.MybatisPlusLogFactory
 #3.2.1以下使用或者不配置
-#modulelist=com.p6spy.engine.logging.P6LogFactory,com.p6spy.engine.outage.P6OutageFactory
+module.log=com.p6spy.engine.logging.P6LogFactory,com.p6spy.engine.outage.P6OutageFactory
 # 自定义日志打印
 logMessageFormat=com.baomidou.mybatisplus.extension.p6spy.P6SpyLogger
 #日志输出到控制台
@@ -119,14 +125,65 @@ outagedetection=true
 outagedetectioninterval=2
 ```
 
-注意！
+> **注意**：
+>
+> - driver-class-name 为 p6spy 提供的驱动类
+> - url 前缀为 jdbc:p6spy: 跟着冒号为对应数据库连接地址
+> - 打印出sql为null,在excludecategories增加commit
+> - 批量操作不打印sql,去除excludecategories中的batch
+> - 批量操作打印重复的问题请使用MybatisPlusLogFactory (3.2.1新增）
+> - 该插件有性能损耗，不建议在生产环境中使用
+>
 
-- driver-class-name 为 p6spy 提供的驱动类
-- url 前缀为 jdbc:p6spy 跟着冒号为对应数据库连接地址
-- 打印出sql为null,在excludecategories增加commit
-- 批量操作不打印sql,去除excludecategories中的batch
-- 批量操作打印重复的问题请使用MybatisPlusLogFactory (3.2.1新增）
-- 该插件有性能损耗，不建
 
 
+- 测试类打印输出
+
+测试类方法
+
+```java
+@Slf4j
+@RunWith(SpringRunner.class)
+@SpringBootTest
+@ActiveProfiles("dev")
+public class MpslCrudApplicationTests {
+
+    @Autowired
+    private UserDao userDao;
+
+    @Test
+    public void contextLoads() {
+    }
+
+    @Test
+    public void aInsert() {
+        UserEntity user = new UserEntity();
+        user.setUserName("我是一个用户");
+        user.setUserAge(999);
+        userDao.insert(user);
+    }
+
+    @Test
+    public void bUpdate() {
+        UserEntity userEntity = new UserEntity();
+        userEntity.setUserName("我是一个真用户");
+        userDao.update(userEntity, new LambdaQueryChainWrapper<>(userDao)
+                .eq(UserEntity::getUserName, "我是一个用户").getWrapper());
+    }
+}
+```
+
+
+
+控制台打印
+
+```c
+//--- ---
+JDBC Connection [HikariProxyConnection@2062780238 wrapping com.p6spy.engine.wrapper.ConnectionWrapper@5a8816cc] will not be managed by Spring
+==>  Preparing: UPDATE xx_user SET user_name=? WHERE (user_name = ?) 
+==> Parameters: 我是一个真用户(String), 我是一个用户(String)
+2019//12-03 10:28:55|13|statement|connection 0|url jdbc:p6spy:mysql://localhost:3306/mybatispuls?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC|UPDATE xx_user  SET user_name=?      WHERE (user_name = ?)|UPDATE xx_user  SET user_name='我是一个真用户'      WHERE (user_name = '我是一个用户')
+<==    Updates: 15
+//--- ---
+```
 
