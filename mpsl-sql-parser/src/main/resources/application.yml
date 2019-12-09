@@ -26,11 +26,13 @@ mybatis-plus:
   global-config:
     db-config:
       table-prefix: xx_
-      column-format: true
-      # table-underline: true
+      # column-format: f_%s_g # 格式化字段,对主键无效,不可以单独配置为 %s
+      # capital-mode: true
+      # column_underline: true
+      #table-underline: true
       logic-delete-value: D
       logic-not-delete-value: A
 
 logging:
   level:
-    com.streamslience.simples.sqlparser.mpslsqlparser: trace
+    com.streamslience.simples.sqlparser.mpslsqlparser: debug

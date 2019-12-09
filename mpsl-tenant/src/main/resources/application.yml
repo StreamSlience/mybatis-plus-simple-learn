@@ -32,7 +32,6 @@ mybatis-plus:
       logic-not-delete-value: A
       table-prefix: xx_ # 表名前缀
       table-underline: true # 表名、是否使用下划线命名（默认 true:默认数据库表下划线命名）
-
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
