@@ -1,0 +1,38 @@
+server:
+  port: 8736
+
+spring:
+  datasource:
+    dynamic:
+      datasource:
+        master:
+          username: ???
+          password: ???
+          driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+          url: ???
+        slave_1:
+          username: ???
+          password: ???
+          driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+          url: ???
+        slave_2:
+          username: ???
+          password: ???
+          driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+          url: ???
+      primary: master
+
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: uuid
+      logic-delete-value: D
+      logic-not-delete-value: D
+      table-underline: true
+
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+logging:
+  level:
+    com.streamslience.simples.dynamic.mpsldynamicdatasource: debug

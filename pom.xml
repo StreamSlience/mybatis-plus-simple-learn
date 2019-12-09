@@ -25,6 +25,7 @@
         <module>mpsl-sql-parser</module>
         <module>mpsl-crud</module>
         <module>mpsl-optimistic-locker</module>
+        <module>mpsl-dynamic-datasource</module>
     </modules>
 
     <properties>
