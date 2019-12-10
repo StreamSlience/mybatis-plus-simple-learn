@@ -27,6 +27,7 @@
         <module>mpsl-optimistic-locker</module>
         <module>mpsl-dynamic-datasource</module>
         <module>mpsl-tenant</module>
+        <module>mpsl-generator</module>
     </modules>
 
     <properties>
