@@ -23,20 +23,21 @@ import java.util.*;
 public class MybatisPlusGenerator {
 
     //表名-包含
-    private static final String[] INCLUDE_TABLES_NAME = {"hd_address_info", "hd_delivery_order", "hd_goods"};
+    private static final String[] INCLUDE_TABLES_NAME = {};
     //表名-排除
     private static final String[] EXCLUDE_TABLES_NAME = {};
     //表名前缀
-    private static final String[] TABLE_PREFIX = {"hd"};
+    private static final String[] TABLE_PREFIX = {};
 
     /*数据库配置*/
     private static final Class DRIVER_NAME = Driver.class;//数据库驱动
     private static final DbType DB_TYPE = DbType.MYSQL;//数据库类型
-    private static final String URL = "jdbc:mysql://192.168.1.151:3316/dev_dely?useUnicode=true&characterEncoding=utf-8&rewriteBatchedStatements=true&allowMultiQueries=true&useServerPrepStmts=false&useCompression=true&serverTimezone=Asia/Shanghai&zeroDateTimeBehavior=convertToNull&connectTimeout=2000&autoReconnect=true&useSSL=false";
-    private static final String USER_NAME = "taozhu";
-    private static final String PASSWORD = "???";
+    private static final String URL = "jdbc:mysql://***?useUnicode=true&characterEncoding=utf-8&rewriteBatchedStatements=true&allowMultiQueries=true&useServerPrepStmts=false&useCompression=true&serverTimezone=Asia/Shanghai&zeroDateTimeBehavior=convertToNull&connectTimeout=2000&autoReconnect=true&useSSL=false";
+    private static final String USER_NAME = "";
+    private static final String PASSWORD = "";
 
     /*全局配置*/
+    //System.getPropertu("user.dir") D:\DataRepositories\Work\IDEAWorkSpace\mybaits-plus-simple-learn\mpsl=generator
     private static final String OUTPUT_DIR = System.getProperty("user.dir") + "/mpsl-generator/src/main/java";//生成文件的输出目录
     private static final String AUTHOR_NAME = "StreamSlience";//作者名称
     private static final String ENTITY_NAME_FORMAT = "%sEntity";//实体类格式化命名
@@ -145,12 +146,12 @@ public class MybatisPlusGenerator {
                 .setTablePrefix(TABLE_PREFIX)//表名前缀
                 .setNaming(NAMING_STRATEGY)//表名策略配置
                 .setColumnNaming(NAMING_STRATEGY)//列名字段配置
-                .setInclude(INCLUDE_TABLES_NAME)//表-包含
-                //.setExclude(EXCLUDE_TABLES_NAME)//表-排除
+                //.setInclude(INCLUDE_TABLES_NAME)//表-包含
+                .setExclude(EXCLUDE_TABLES_NAME)//表-排除
                 .setSuperEntityClass(SUPER_ENTITY_CLASS)//实体类超类
                 //.setSuperControllerClass(null)//控制层公共超类
                 //.setEntityLombokModel(true)//开启Lombok注解
-                .setEntityBuilderModel(false)//设置为true则实体类set方法返回实体对象
+                //.setEntityBuilderModel(false)//设置为true则实体类set方法返回实体对象
                 .setRestControllerStyle(true)//生成 @RestController 控制器
                 //.setEntitySerialVersionUID(false)//不生成持久化标识
                 .setSkipView(true)//跳过视图
