@@ -22,7 +22,6 @@ spring:
       connection-test-query: select 1
       read-only: false
 
-
 mybatis-plus:
   global-config:
     db-config:
